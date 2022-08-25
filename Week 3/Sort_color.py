@@ -7,7 +7,7 @@ def Sort_color(nums):
     ##############Steps#################
     # 1. use and indexing variable to iterate through all the arry elemnts
     for i in range(1,len(nums)):
-        # 2. in selection sorting the arry will have a sorted and unsorted version.
+        # 2. in insertion sorting the arry will have a sorted and unsorted version.
         # 3. each time the i-1th elemnt is greater than the ith element we make a swap
         # 4. and since python uses negative index we limit our code to i>0
         while nums[i-1]>nums[i] and i>0:
