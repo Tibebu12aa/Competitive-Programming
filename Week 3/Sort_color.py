@@ -3,7 +3,7 @@ def Sort_color(nums):
     #1 means White 
     #2 means blue
     #for this problem i we want to sort same colors together
-    ##For This particular problem i used selection sort
+    ##For This particular problem i used insertion sort
     ##############Steps#################
     # 1. use and indexing variable to iterate through all the arry elemnts
     for i in range(1,len(nums)):
