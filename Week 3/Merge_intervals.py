@@ -1,8 +1,7 @@
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        # in order to merge the overlapping intervals firs the intervals list needs to be sorted in order           
-        # using the first element as key
-        # and for that i used the sort function and lambda expression
+        # in order to merge the overlapping intervals firs the intervals list needs to be sorted in order using the first element as key 
+	# and for that i used the sort function and lambda expression
         intervals.sort(key = lambda y: y[0])
         # now we create an empty list wich will hold the non_overlapping intervals
         non_overlapping=[]
