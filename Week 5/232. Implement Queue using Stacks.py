@@ -16,7 +16,7 @@ class MyQueue:
             """ 
             self.stack2.append(self.stack1.pop())
         poped_val = self.stack1.pop()
-        # after that we undo the pop by returning it from the stack2(last elemnt)
+        # after that we undo the pop by returning all the elments from the stack2
         for i in range(length):
             self.stack1.append(self.stack2.pop())
         return poped_val
