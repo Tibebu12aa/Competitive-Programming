@@ -1,21 +1,22 @@
-import math
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        # first we need to define each operators functions since it is listed as a string 
-        # so we created a dictionry containing each operartion and its fuv=ction
-        operators={"+": lambda a,b: a+b, "-": lambda a,b: a-b, "*": lambda a,b: a*b, "/": lambda a,b:int(a/b)}
-        # now we create an empty stack
-        stack=[]
-        # for every element in tokens we proceed to iterate 
-        for j in tokens:
-            if j in operators:
-                a=stack.pop()
-                b=stack.pop()
-                stack.append(operators[j](a,b))
+        # first we create an empty stack
+        # now for each elemnt if the element is not an operator we append it to the stack
+        stack = []      
+        for i in tokens:
+            """
+            else if the element is not an operator then for each operator we run the operation for the two               elements in the stack and store the result as the 
+            last element by removing the previous last element using pop
+            """ 
+            if i == "+":
+                stack[-1] = stack[-2] + stack.pop()
+            elif i == "-":
+                stack[-1] = stack[-2] - stack.pop()
+            elif i == "*":
+                stack[-1] = stack[-2] * stack.pop()
+            elif i == "/":
+                stack[-1] = int(stack[-2] / stack.pop())
             else:
-                stack.append(int(j))
-        return stack[0]
-            
-        
-                         
-            
+                stack.append(int(i))
+                
+        return stack.pop()
