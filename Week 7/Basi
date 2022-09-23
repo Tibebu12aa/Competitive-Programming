@@ -1,8 +1,0 @@
-import heapq
-a=[]
-sad=[1,23,42,14,2,3,23,54]
-for i in sad:
-    heapq.heappush(a,-1*i)
-print(a)
-heapq.heapify(sad)
-print(sad)
