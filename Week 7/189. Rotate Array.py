@@ -3,9 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        """
-        Do not return anything, modify nums in-place instead.
-        """
         k = k % len(nums) #if k == len(nums) i.e no rotation
         
         #reverse array
