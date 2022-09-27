@@ -5,6 +5,7 @@ class Solution:
         r=0
         prod=1
         res=0
+        #
         while r<(len(nums)):
             prod*=nums[r]
             while prod>=k:
@@ -13,5 +14,6 @@ class Solution:
             res+=r-l+1
             r+=1
         return res
+
                 
         
