@@ -1,7 +1,5 @@
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
-        if not nums:
-            return 0
         
         zero_idx = {i:-1 for i in range(-k, 1)}
         print(zero_idx)
