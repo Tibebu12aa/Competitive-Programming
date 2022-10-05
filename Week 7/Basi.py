@@ -1,17 +1,13 @@
-pushed = [1,2,3,1,4,5]
-popped = [4,2,3,5,1,2]
-stack=[]
-j=len(popped)-1
-i=0
-while stack and i<len(pushed)-1:
-    if popped.pop()==pushed[i]:
-        stack.pop()
-    stack.append(pushed[i])
-    i+=1
-print(stack)
-if len(stack)==0:
-    print(True)
-else:
-    print(False)
-
-
+pushed = [1,2,3,4,5,5,3,2,3,23,6,43,2]
+n=len(pushed)
+lastelement=pushed[-1]
+for i in range(1,len(pushed)):
+    currNm=pushed[i]
+    for j in range(i-1,-1,-1):
+        if pushed[j]>currNm:
+            pushed[j+1]=pushed[j]
+            print(pushed)
+        else:
+            pushed[j+1]=currNm
+            break
+print(*pushed)
