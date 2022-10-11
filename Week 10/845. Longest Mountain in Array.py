@@ -1,16 +1,22 @@
 class Solution:
-    def longestMountain(self, A):
-        n, max_len = len(A), 0
-        state, length = 0, 1
-        for i in range(n-1):
-            if state in [0, 1] and A[i+1] > A[i]:
-                state, length = 1, length + 1
-            elif state == 2 and A[i+1] > A[i]:
-                state, length = 1, 2
-            elif state in [1, 2] and A[i+1] < A[i]:
-                state, length = 2, length + 1
-                max_len = max(length, max_len)
+    def longestMountain(self, arr: List[int]) -> int:
+        n=len(arr)
+        ans=0
+        i=1
+        while i<n-1:
+            if arr[i-1]<arr[i]>arr[i+1]:
+                j=i
+                count=1
+                while j>0 and arr[j]>arr[j-1]:
+                    count+=1
+                    j-=1
+                k=i
+                while k<n-1 and arr[k]>arr[k+1]:
+                    k +=1
+                    count+=1
+                ans=max(ans,count)
+                i+=1
             else:
-                state, length = 0, 1
-                
-        return max_len
+                i+=1
+        return ans 
+        
